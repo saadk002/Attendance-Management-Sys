@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Ams.Models.Student>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333; /* Adjust color as needed */
+        margin-top: 20px; /* Adjust margin as needed */
+    }
+</style>
+<h2>Students Data</h2>
+<div class="row">
+    <div class="col-md-12">
+        <div class="btn-group" role="group" aria-label="Dashboard Actions">
+            <a href="@Url.Action("Create", "Students")" class="btn btn-primary">Add Students</a>
+        </div>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnrollmentDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EnrollmentDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.StudentID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.StudentID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

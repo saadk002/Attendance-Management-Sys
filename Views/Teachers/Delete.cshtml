@@ -1,0 +1,73 @@
+﻿@model Ams.Models.Teacher
+
+@{
+    ViewBag.Title = "Delete";
+}
+<style>
+    /* Button Styles */
+    .btn.btn-default {
+        background-color: #007bff; /* Blue background color */
+        color: #fff; /* White text color */
+        border: none; /* Remove border */
+        padding: 10px 20px; /* Add padding for better appearance */
+        border-radius: 5px; /* Add border radius for rounded corners */
+        font-size: 16px; /* Adjust font size */
+        cursor: pointer; /* Add pointer cursor on hover */
+        transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+    }
+
+        .btn.btn-default:hover {
+            background-color: #0056b3; /* Darker blue background color on hover */
+        }
+
+</style>
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Teacher</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HireDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HireDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

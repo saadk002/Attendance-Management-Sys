@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+            header h2 {
+                margin: 0;
+            }
+
+        /* Container Styles */
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+            .container h1 {
+                margin-bottom: 20px;
+            }
+
+        /* Button Styles */
+        .btn {
+            margin: 0 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Dashboard</h2>
+    </header>
+
+    <div class="container">
+        <h1>Welcome</h1>
+
+        <div class="btn-group" role="group" aria-label="Dashboard Actions">
+            <a href="@Url.Action("Create", "Students")" class="btn btn-primary">Add Student</a>
+            <a href="@Url.Action("Create", "Attendances")" class="btn btn-secondary">Mark Attendance</a>
+            <a href="@Url.Action("Create", "Teachers")" class="btn btn-success">Add Teacher</a>
+            <a href="@Url.Action("Create", "Courses")" class="btn btn-info">Add Course</a>
+            <a href="@Url.Action("Create", "Classes")" class="btn btn-warning">Add Class</a>
+        </div>
+        </div>
+
+    <!-- Include Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

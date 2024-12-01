@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Ams.Models.Cours>
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    h2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333; /* Adjust color as needed */
+        margin-top: 20px; /* Adjust margin as needed */
+    }
+    .right {
+        text-align: right;
+    }
+ </style>
+<h2>Courses</h2>
+
+
+    <div class="row">
+        <div class="col-md-12 right">
+            <div class="btn-group" role="group" aria-label="Dashboard Actions">
+                <a href="@Url.Action("Create", "Cours")" class="btn btn-primary">Add Courses</a>
+            </div>
+        </div>
+    </div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CourseCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Credits)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CourseCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Credits)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CourseID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CourseID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CourseID })
+        </td>
+    </tr>
+}
+
+</table>

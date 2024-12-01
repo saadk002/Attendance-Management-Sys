@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model DateTime?
+
+@if (Model.HasValue)
+{
+    @Model.Value.ToString("yyyy-MM-dd")
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DateTime</title>
+</head>
+<body>
+    <div>
+    </div>
+</body>
+</html>
